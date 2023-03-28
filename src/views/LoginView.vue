@@ -1,14 +1,25 @@
 <template>
-    <!-- TODO: Email input field; password input field; submit button -->
-    <div>
-        <label for="inputEmail">Email:</label>
-        <input type="email" id="inputEmail" placeholder="Your email here">
-        <label for="inputPassword">Password:</label>
-        <input type="password" id="inputPassword" placeholder="Your password here">
+    <!-- alright, the following (first time Tailwind) is indeed ugly -->
+    <!-- next up: inventing intermediate class templates (for example a "primarybutton" template) to apply in fewer words? -->
+    <div class="flex flex-col">
+        <div class="relative w-1/2 mx-auto my-1">
+            <label for="inputEmail"
+                class="block">Email:</label>
+            <input type="email" id="inputEmail" placeholder="Your email here"
+                class="block w-full rounded-sm m-1 p-1 text-black">
+        </div>
+        <div class="relative w-1/2 mx-auto my-1">
+            <label for="inputPassword"
+                class="block">Password:</label>
+            <input type="password" id="inputPassword" placeholder="Your password here"
+                class="block w-full rounded-sm m-1 p-1 text-black">
+        </div>
 
         <br/>
 
-        <button type="button">Log in</button>
+        <button type="button" class="w-1/3 bg-sky-400 rounded-lg
+                                    relative mx-auto my-8 py-4 left-0 right-0
+                                    text-lg font-semibold text-white">Log in</button>
     </div>
 </template>
 
