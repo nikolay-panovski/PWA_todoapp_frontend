@@ -33,16 +33,16 @@
             <option value="None">None</option>
         </select>
 
-        <label for="inputNewTask"
+        <label for="inputTimeEstimated"
             class="">Time Estimated</label>
         <input type="time" id="inputTimeEstimated" value="01:00"
             class="rounded-sm m-1 p-1 text-black">
 
-        <label for="inputNewTask"
+        <label for="inputTimeDeadline"
             class="">Deadline</label>
             <!-- TODO?: v-bind: value to default to now? -->
             <!-- TODO: v-bind: min and max to visually create acceptable range for Deadline (from current time to project deadline) -->
-        <input type="date" id="inputNewTask" value="" min="" max=""
+        <input type="date" id="inputTimeDeadline" value="" min="" max=""
             class="rounded-sm m-1 p-1 text-black">
 
 
