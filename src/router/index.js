@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginView from "../views/LoginView.vue"
+import CreateNewProjectView from "../views/operations/CreateNewProjectView.vue"
 import CreateNewTaskView from "../views/operations/CreateNewTaskView.vue"
 import EditTaskView from "../views/operations/EditTaskView.vue"
 
@@ -24,6 +25,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginView
+    },
+    {
+      path: '/test/newProject',
+      name: 'createNewProject',
+      component: CreateNewProjectView
     },
     {
       path: '/test/newTask',

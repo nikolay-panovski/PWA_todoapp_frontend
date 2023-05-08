@@ -14,6 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>        <!-- content mounted depending on the current URL ("subpage") -->
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/login">Login</RouterLink>
+        <RouterLink to="/test/newProject">Test: Create New Project</RouterLink>
         <RouterLink to="/test/newTask">Test: Create New Task</RouterLink>
         <RouterLink to="/test/editTask">Test: Edit Task</RouterLink>
       </nav>
