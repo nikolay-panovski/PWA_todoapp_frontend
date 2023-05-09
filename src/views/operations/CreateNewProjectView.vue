@@ -18,6 +18,15 @@
         <input type="text" id="inputStakeholderCompany" placeholder="Stakeholder Company"
             class="rounded-sm m-1 p-1 text-black">
 
+        <label for="inputTimeEstimated"
+            class="">Time Estimated</label>
+        <div id="inputTimeEstimated">
+            <input type="number" min="0" max="99999" step="1" 
+                class="rounded-sm m-1 p-1 text-black" />h : 
+            <input type="number" min="0" max="59" step="1" 
+                class="rounded-sm m-1 p-1 text-black" />m
+        </div>
+
         <label for="inputTimeDeadline"
             class="">Deadline</label>
             <!-- TODO?: v-bind: value to default to now? -->

@@ -36,8 +36,12 @@
 
         <label for="inputTimeTracked"
             class="">Time Tracked</label>
-        <input type="time" id="inputTimeTracked" value="01:00"
-            class="rounded-sm m-1 p-1 text-black">
+        <div id="inputTimeTracked">
+            <input type="number" min="0" max="99999" step="1" 
+                class="rounded-sm m-1 p-1 text-black" />h : 
+            <input type="number" min="0" max="59" step="1" 
+                class="rounded-sm m-1 p-1 text-black" />m
+        </div>
 
 
         <button type="button" class="w-1/3 bg-sky-400 rounded-lg

@@ -35,8 +35,12 @@
 
         <label for="inputTimeEstimated"
             class="">Time Estimated</label>
-        <input type="time" id="inputTimeEstimated" value="01:00"
-            class="rounded-sm m-1 p-1 text-black">
+        <div id="inputTimeEstimated">
+            <input type="number" min="0" max="99999" step="1" 
+                class="rounded-sm m-1 p-1 text-black" />h : 
+            <input type="number" min="0" max="59" step="1" 
+                class="rounded-sm m-1 p-1 text-black" />m
+        </div>
 
         <label for="inputTimeDeadline"
             class="">Deadline</label>
