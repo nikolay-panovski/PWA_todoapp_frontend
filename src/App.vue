@@ -14,10 +14,14 @@ import HelloWorld from './components/HelloWorld.vue'
       class="flex flex-row-reverse place-items-start">
       <button type="button" class="bg-green-500 rounded-md
                                 relative mx-2 my-auto p-3
-                                text-lg font-semibold text-white">Register</button>
+                                text-lg font-semibold text-white">
+        <RouterLink to="#">Register</RouterLink>
+      </button>
       <button type="button" class="bg-gray-400 rounded-md
                                 relative mx-2 my-auto p-3
-                                text-lg font-normal text-white">Log in</button>
+                                text-lg font-normal text-white">
+        <RouterLink to="#">Log in</RouterLink>
+      </button>
     </div>
 
     <div v-if=true class="flex basis-full flex-row justify-around">
@@ -38,14 +42,20 @@ import HelloWorld from './components/HelloWorld.vue'
         <a href="#">Log out</a>
         <button type="button" class="bg-gray-400 rounded-md
                                 relative mx-2 my-auto p-3
-                                text-lg font-normal text-white">New Task</button>
+                                text-lg font-normal text-white">
+          <RouterLink to="/test/newTask">New Task</RouterLink>
+        </button>
         <!-- v-if="state.user.type == manager" -->
         <button type="button" class="bg-gray-400 rounded-md
                                 relative mx-2 my-auto p-3
-                                text-lg font-normal text-white">New Project</button>
+                                text-lg font-normal text-white">
+          <RouterLink to="/test/newProject">New Project</RouterLink>
+        </button>
         <button type="button" class="bg-gray-400 rounded-md
                                 relative mx-2 my-auto p-3
-                                text-lg font-normal text-white">Dashboard</button>
+                                text-lg font-normal text-white">
+          Dashboard
+        </button>
       </div>
       <!--
       <HelloWorld msg="You did it!" />  !-- exists on every page --
