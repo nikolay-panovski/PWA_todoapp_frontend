@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import RegisterViewMock from "../views/RegisterViewMock.vue"
 import LoginView from "../views/LoginView.vue"
 import CreateNewProjectView from "../views/operations/CreateNewProjectView.vue"
 import CreateNewTaskView from "../views/operations/CreateNewTaskView.vue"
@@ -20,6 +21,11 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/test/register',
+      name: 'register',
+      component: RegisterViewMock
     },
     {
       path: '/login',
