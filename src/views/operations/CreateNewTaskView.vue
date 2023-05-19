@@ -1,6 +1,6 @@
 <template>
     <!-- TODO: header here -->
-    <div class="flex flex-col">
+    <div class="flex flex-col w-1/2 m-auto">
         <h1 class="leading-loose text-2xl">New Task</h1>
 
         <label for="inputNewTask"
