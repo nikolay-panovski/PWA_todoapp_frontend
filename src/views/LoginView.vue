@@ -18,10 +18,15 @@
 
         <br/>
 
-        <button type="button" @click="login(email, password)"
+        <button type="button" @click="tryLogin(email, password)"
                     class="w-1/3 bg-sky-400 rounded-lg
                         relative mx-auto my-8 py-4 left-0 right-0
                         text-lg font-semibold text-white">Log in</button>
+
+        <div v-if="lastLoginFailed"
+            class="block w-full rounded-lg m-1 p-4 text-black border-red-700 bg-red-300">
+            Error!<br> {{ lastLoginResult.error }}
+        </div>
     </div>
 </template>
 
@@ -31,12 +36,18 @@
 
     const email = ref("");
     const password = ref("");
-
     const { login } = userAuth();
 
-    // TODO: Make button @click=login function that calls user_auth->login()
-    // Handle return value->error(s), if any
+    const lastLoginFailed = ref(false);
+    const lastLoginResult = ref();
+
+    async function tryLogin(email, password) {
+        lastLoginResult.value = await login(email, password);
+
+        lastLoginFailed.value = lastLoginResult.value.error !== null ? true : false;
+    }
     // Else: Store return value->userHandle in prop here and define prop that the main App.vue can import (for header, possibly others?)
+
 </script>
 
 <style lang="scss" scoped>
