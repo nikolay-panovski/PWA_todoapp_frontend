@@ -40,7 +40,7 @@
 
         <!-- TODO: replace @click handler with register or nothing -->
         <button type="button" @click="testDisplayInputs( ['inputFirstName', 'inputLastName', 'inputEmail', 'inputPassword', 'inputCompany'] )"
-                    class="w-1/3 bg-sky-400 rounded-lg
+                    class="w-1/4 bg-sky-400 rounded-lg
                             relative mx-auto my-8 py-4 left-0 right-0
                             text-lg font-semibold text-white">Register</button>
     </div>

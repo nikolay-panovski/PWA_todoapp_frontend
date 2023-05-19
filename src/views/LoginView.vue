@@ -1,7 +1,7 @@
 <template>
     <!-- alright, the following (first time Tailwind) is indeed ugly -->
     <!-- next up: inventing intermediate class templates (for example a "primarybutton" template) to apply in fewer words? -->
-    <div class="flex flex-col">
+    <div class="flex flex-col items-center">
         <div class="relative w-1/2 mx-auto my-1">
             <label for="inputEmail"
                 class="block">Email:</label>
@@ -19,12 +19,12 @@
         <br/>
 
         <button type="button" @click="tryLogin(email, password)"
-                    class="w-1/3 bg-sky-400 rounded-lg
+                    class="w-1/4 bg-sky-400 rounded-lg
                         relative mx-auto my-8 py-4 left-0 right-0
                         text-lg font-semibold text-white">Log in</button>
 
         <div v-if="lastLoginFailed"
-            class="block w-full rounded-lg m-1 p-4 text-black border-red-700 bg-red-300">
+            class="block w-1/2 rounded-lg m-1 p-4 text-black border-red-700 bg-red-300">
             Error!<br> {{ lastLoginResult.error }}
         </div>
     </div>
