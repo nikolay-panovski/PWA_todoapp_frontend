@@ -44,7 +44,7 @@
     async function tryLogin(email, password) {
         lastLoginResult.value = await login(email, password);
 
-        lastLoginFailed.value = lastLoginResult.value.error !== null ? true : false;
+        lastLoginFailed.value = lastLoginResult.value.error === null ? false : true;
     }
     // Else: Store return value->userHandle in prop here and define prop that the main App.vue can import (for header, possibly others?)
 
