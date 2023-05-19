@@ -5,26 +5,38 @@
         <div class="relative w-1/2 mx-auto my-1">
             <label for="inputEmail"
                 class="block">Email:</label>
-            <input type="email" id="inputEmail" placeholder="Your email here"
+            <input type="email" id="inputEmail" placeholder="Your email here" v-model="email"
                 class="block w-full rounded-sm m-1 p-1 text-black">
+                <span>Test: {{ email }} </span>
         </div>
         <div class="relative w-1/2 mx-auto my-1">
             <label for="inputPassword"
                 class="block">Password:</label>
-            <input type="password" id="inputPassword" placeholder="Your password here"
+            <input type="password" id="inputPassword" placeholder="Your password here" v-model="password"
                 class="block w-full rounded-sm m-1 p-1 text-black">
         </div>
 
         <br/>
 
-        <button type="button" class="w-1/3 bg-sky-400 rounded-lg
-                                    relative mx-auto my-8 py-4 left-0 right-0
-                                    text-lg font-semibold text-white">Log in</button>
+        <button type="button" @click="login(email, password)"
+                    class="w-1/3 bg-sky-400 rounded-lg
+                        relative mx-auto my-8 py-4 left-0 right-0
+                        text-lg font-semibold text-white">Log in</button>
     </div>
 </template>
 
 <script setup>
+    import { ref } from "vue";
+    import userAuth from "../components/user_auth/user_auth.js";
 
+    const email = ref("");
+    const password = ref("");
+
+    const { login } = userAuth();
+
+    // TODO: Make button @click=login function that calls user_auth->login()
+    // Handle return value->error(s), if any
+    // Else: Store return value->userHandle in prop here and define prop that the main App.vue can import (for header, possibly others?)
 </script>
 
 <style lang="scss" scoped>

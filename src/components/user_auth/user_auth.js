@@ -7,11 +7,23 @@ const userAuthFunctions = () => {
     async function login(email, password) {
         let responseResult;
 
-        await fetch(backendBaseURL + "/login", { method: "POST" } )
+        /* ... the /api/userAuth part is hardcoded on the server side, feels like it should be exported like the base URL... */
+        await fetch(backendBaseURL + "/api/userAuth/login",
+                    {
+                        method: "POST",
+                        headers: { 
+                            "Content-Type": "application/json",  // required, else Chrome's default apparently is text/plain.
+                                                                 // oddly enough, app.use(express.json()) on server side is either useless or ignored.
+                            "Accept": "application/json"
+                        },    
+                        mode: 'cors',   // people imply it might be required. I mean, it definitely *is* CORS, might as well be explicit.
+                                        // https://stackoverflow.com/questions/39842013/fetch-post-with-body-data-not-working-params-empty
+                        body: JSON.stringify( { email, password } )
+                    } )
                 .then ( (responseObject) => responseResult = responseObject.body)
                 .catch( (error) => console.log(error) );
 
-        return responseResult;  // { error, token, userHandle }
+        return responseResult;  // { error, data { token, userHandle } }
     }
 
     function register() {
