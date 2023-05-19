@@ -20,8 +20,8 @@
 
         <label for="inputTimeEstimated"
             class="">Time Estimated</label>
-        <div id="inputTimeEstimated">
-            <input type="number" min="0" max="99999" step="1" 
+        <div >
+            <input id="inputTimeEstimated" type="number" min="0" max="99999" step="1" 
                 class="rounded-sm m-1 p-1 text-black" />h : 
             <input type="number" min="0" max="59" step="1" 
                 class="rounded-sm m-1 p-1 text-black" />m
