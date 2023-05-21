@@ -1,79 +1,15 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header class="flex flex-row justify-evenly bg-blue-400">
-    <!-- TODO: find appropriate image for app logo and change -->
-    <img alt="Vue logo" src="@/assets/logo.svg" width="125" height="125" 
-      class="my-2" />
-
-    <!-- v-if="state.user != null"-->
-    <div v-if=false
-      class="flex flex-row-reverse place-items-start">
-      <button type="button" class="bg-green-500 rounded-md
-                                relative mx-2 my-auto p-3
-                                text-lg font-semibold text-white">
-        <RouterLink to="#">Register</RouterLink>
-      </button>
-      <button type="button" class="bg-gray-400 rounded-md
-                                relative mx-2 my-auto p-3
-                                text-lg font-normal text-white">
-        <RouterLink to="#">Log in</RouterLink>
-      </button>
-    </div>
-
-    <div v-if=true class="flex basis-full flex-row justify-around">
-      <div class="flex flex-row justify-center">
-        <!-- TODO: find appropriate image for user logo and change -->
-        <img alt="User logo" src="@/assets/logo.svg" width="64" height="64" 
-          class="m-4" />
-
-        <div class="flex flex-col justify-center">
-          <p class="text-lg font-semibold text-white">User name</p>
-          <p class="text-md font-semibold text-red-600">100%DEV</p>
-          <p class="text-md font-semibold text-red-600">Employee</p>
-        </div>
-      </div>
-      
-
-      <div class="flex flex-row-reverse items-center">
-        <a href="#">Log out</a>
-        <button type="button" class="bg-gray-400 rounded-md
-                                relative mx-2 my-auto p-3
-                                text-lg font-normal text-white">
-          <RouterLink to="/test/newTask">New Task</RouterLink>
-        </button>
-        <!-- v-if="state.user.type == manager" -->
-        <button type="button" class="bg-gray-400 rounded-md
-                                relative mx-2 my-auto p-3
-                                text-lg font-normal text-white">
-          <RouterLink to="/test/newProject">New Project</RouterLink>
-        </button>
-        <button type="button" class="bg-gray-400 rounded-md
-                                relative mx-2 my-auto p-3
-                                text-lg font-normal text-white">
-          Dashboard
-        </button>
-      </div>
-      <!--
-      <HelloWorld msg="You did it!" />  !-- exists on every page --
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>        !-- content mounted depending on the current URL ("subpage") --
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/login">Login</RouterLink>
-        <RouterLink to="/test/newProject">Test: Create New Project</RouterLink>
-        <RouterLink to="/test/newTask">Test: Create New Task</RouterLink>
-        <RouterLink to="/test/editTask">Test: Edit Task</RouterLink>
-      </nav>
-      -->
-    </div>
-  </header>
+  <CurrentUserHeader />
 
   <RouterView />
 </template>
+
+<script setup>
+  import { RouterView } from 'vue-router'
+  import CurrentUserHeader from './components/app_header/CurrentUserHeader.vue'
+
+
+</script>
 
 <style scoped>
 /**
