@@ -13,7 +13,7 @@
       
 
     <div class="flex flex-row-reverse items-center">
-        <a href="#">Log out</a>
+        <LogOutButton></LogOutButton>
         <button type="button" class="bg-gray-400 rounded-md
                                 relative mx-2 my-auto p-3
                                 text-lg font-normal text-white">
@@ -35,6 +35,7 @@
 
 <script setup>
     import { RouterLink } from 'vue-router';
+    import LogOutButton from '../LogOutButton.vue';
 
     defineProps({
         name_first: { type: String, required: true },
