@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import RegisterViewMock from "../views/RegisterViewMock.vue"
 import LoginView from "../views/LoginView.vue"
 import CreateNewProjectView from "../views/operations/CreateNewProjectView.vue"
@@ -11,11 +10,6 @@ import { useCurrentUserStore } from "../components/currentUserStore.js";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
     {
       path: '/test/register',
       name: 'register',
