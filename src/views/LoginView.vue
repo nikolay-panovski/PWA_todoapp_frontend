@@ -54,8 +54,8 @@
             lastLoginFailed.value = false;
             const userInfo = lastLoginResult.value.data.userObject;
             
+            currentUser.token = lastLoginResult.value.data.token;
             currentUser.addCurrentUser(userInfo._id, userInfo.name_first, userInfo.name_last, userInfo.company, userInfo.role);
-            // TODO: use returned data.token?? store in currentUser store?
 
             router.push( { name: "dashboard" } );
         }
