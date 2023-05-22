@@ -54,7 +54,7 @@
     const deadline = ref();
     const { createNewProject } = createNewProjectFunctions();
 
-    async function tryCreateProject() {
+    function tryCreateProject() {
         const frontendProjectParams = { 
             name: name.value,
             description: description.value,
@@ -63,9 +63,7 @@
             deadline: deadline.value
         }
 
-        const createResult = await createNewProject(frontendProjectParams);
-
-        if (createResult.errorStatus !== undefined && createResult.errorStatus !== null) console.log("Frontend received an error");
+        createNewProject(frontendProjectParams);
 
         // router.push( { path: view of "all projects" page } );
     }
