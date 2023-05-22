@@ -15,7 +15,7 @@ const getTaskListsFunctions = () => {
                 mode: 'cors'
             } )
             .then ( (responseObject) => responseObject.json())
-            .then ( (responseJson) => { console.log(responseJson); return responseJson; } )
+            .then ( (responseJson) => { return responseJson; } )
             .catch( (error) => console.log(error) );
     }
 
