@@ -48,7 +48,9 @@ router.beforeEach((to, from) => {
   // currentUser is also the confirmation of whether there is a person logged in or not (condition for "is authenticated")
   const currentUser = useCurrentUserStore();
 
-  if (to.name !== "login" && !currentUser.hasCurrentUser) {
+  // since "register" is a mock in this application, if accessed anyhow, make sure to go there,
+  // else redirect anything unauthenticated to login page:
+  if (to.name !== "register" && to.name !== "login" && !currentUser.hasCurrentUser) {
     // the "query" part is in case we were redirected from a session timeout and would like to return to that same page after logging in again
     return { name: "login", query: { redirect: to.fullPath } };
   }
