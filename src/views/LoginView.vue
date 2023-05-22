@@ -31,12 +31,18 @@
 </template>
 
 <script setup>
+    import router from "../router/index.js";
+
     import { ref } from "vue";
     import userAuth from "../components/user_auth/user_auth.js";
+
+    import { useCurrentUserStore } from "../components/currentUserStore.js";
 
     const email = ref("");
     const password = ref("");
     const { login } = userAuth();
+
+    const currentUser = useCurrentUserStore();
 
     const lastLoginFailed = ref(false);
     const lastLoginResult = ref();
@@ -44,9 +50,20 @@
     async function tryLogin(email, password) {
         lastLoginResult.value = await login(email, password);
 
-        lastLoginFailed.value = lastLoginResult.value.error === null ? false : true;
+        if (lastLoginResult.value.error === null) {
+            lastLoginFailed.value = false;
+            const userInfo = lastLoginResult.value.data.userObject;
+            
+            currentUser.addCurrentUser(userInfo._id, userInfo.name_first, userInfo.name_last, userInfo.company, userInfo.role);
+            // TODO: use returned data.token?? store in currentUser store?
+
+            router.push( { name: "createNewTask" } );
+        }
+        else {
+            lastLoginFailed.value = true;
+            // then use this bool to display an error (above in <template>)
+        }
     }
-    // Else: Store return value->userHandle in prop here and define prop that the main App.vue can import (for header, possibly others?)
 
 </script>
 

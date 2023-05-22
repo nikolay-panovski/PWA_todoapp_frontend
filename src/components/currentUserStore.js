@@ -12,7 +12,14 @@ export const useCurrentUserStore = defineStore("useCurrentUser", () => {
     // definitely useful if I need to define filter queries or more complex accesses
     const hasCurrentUser = computed(() => id.value !== undefined && id.value !== null);
 
-    // TODO: function addCurrentUser() that updates the values with a new user and that only LoginView ever calls after successful log in
+    // only LoginView ever calls this after successful log in
+    function addCurrentUser(pId, pNameFirst, pNameLast, pCompany, pRole) {
+        id.value = pId;
+        name_first.value = pNameFirst;
+        name_last.value = pNameLast;
+        company.value = pCompany;
+        role.value = pRole;
+    }
 
     function removeCurrentUser() {
         id.value = null;
@@ -29,6 +36,7 @@ export const useCurrentUserStore = defineStore("useCurrentUser", () => {
         company,
         role,
         hasCurrentUser,
+        addCurrentUser,
         removeCurrentUser
     } ;
 });
