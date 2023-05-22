@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import RegisterViewMock from "../views/RegisterViewMock.vue"
 import LoginView from "../views/LoginView.vue"
+
+import DashboardView from "../views/HomeDashboardView.vue"
+
 import CreateNewProjectView from "../views/operations/CreateNewProjectView.vue"
 import CreateNewTaskView from "../views/operations/CreateNewTaskView.vue"
 import EditTaskView from "../views/operations/EditTaskView.vue"
@@ -10,6 +14,16 @@ import { useCurrentUserStore } from "../components/currentUserStore.js";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/',
+      name: 'index',
+      component: DashboardView
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: DashboardView
+    },
     {
       path: '/test/register',
       name: 'register',

@@ -57,7 +57,7 @@
             currentUser.addCurrentUser(userInfo._id, userInfo.name_first, userInfo.name_last, userInfo.company, userInfo.role);
             // TODO: use returned data.token?? store in currentUser store?
 
-            router.push( { name: "createNewTask" } );
+            router.push( { name: "dashboard" } );
         }
         else {
             lastLoginFailed.value = true;
