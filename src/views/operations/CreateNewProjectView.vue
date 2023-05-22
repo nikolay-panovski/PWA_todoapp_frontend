@@ -39,6 +39,11 @@
                             class="w-1/3 bg-sky-400 rounded-lg
                                 relative mx-auto my-8 py-4 left-0 right-0
                                 text-lg font-semibold text-white">Create New Project</button>
+
+        <div v-if="lastCreateFailed"
+            class="block w-1/2 rounded-lg m-1 p-4 text-black border-red-700 bg-red-300">
+            Error!<br> {{ lastCreateError }}
+        </div>
     </div>
 </template>
 
@@ -54,7 +59,10 @@
     const deadline = ref();
     const { createNewProject } = createNewProjectFunctions();
 
-    function tryCreateProject() {
+    const lastCreateFailed = ref(false);
+    const lastCreateError = ref("");
+
+    async function tryCreateProject() {
         const frontendProjectParams = { 
             name: name.value,
             description: description.value,
@@ -63,9 +71,17 @@
             deadline: deadline.value
         }
 
-        createNewProject(frontendProjectParams);
+        const createResult = await createNewProject(frontendProjectParams);
+        // enforces BE to return all errors with "error" direct property, else this will fail *and* burn with a working router.push below
+        if (Object.hasOwn(createResult, "error") && createResult.error !== null) {
+            lastCreateFailed.value = true;
+            lastCreateError.value = createResult.error;
+        }
+        else {
+            lastCreateFailed.value = false;
 
-        // router.push( { path: view of "all projects" page } );
+            // router.push( { path: view of "all projects" page ? concrete project page } );
+        }
     }
 </script>
 
