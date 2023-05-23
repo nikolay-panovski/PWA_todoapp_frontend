@@ -2,21 +2,21 @@
     <Suspense>
         <template #default>
             <div v-if="currentUserHasProjects">
-                <table>
-                    <tr>
-                        <th>Project</th>
-                        <th>Stakeholder</th>
-                        <th>Deadline</th>
-                        <th>Actions</th>
+                <table class="mx-8 my-4">
+                    <tr class="p-3">
+                        <th class="p-3">Project</th>
+                        <th class="p-3">Stakeholder</th>
+                        <th class="p-3">Deadline</th>
+                        <th class="p-3">Actions</th>
                     </tr>
                     <tr v-for="project in projects" v-bind:key="project._id"
-                    class="">
-                        <td> {{ project.name }}</td>
-                        <td> {{ project.company_client }}</td>
-                        <td> {{ project.deadline }} </td>
+                    class="p-3">
+                        <td class="p-3"> {{ project.name }}</td>
+                        <td class="p-3"> {{ project.company_client }}</td>
+                        <td class="p-3"> {{ project.deadline }} </td>
                         <button type="button" @click="goToProjectPage(project._id)"
                             class="bg-green-300 rounded-lg
-                                relative py-2 left-0 right-0
+                                relative p-2 left-0 right-0
                                 text-lg font-semibold text-white">Go</button>
                     </tr>
                 </table>
