@@ -50,6 +50,10 @@ const router = createRouter({
       path: '/test/editTask',
       name: 'editTask',
       component: EditTaskView
+    },{
+      path: '/allProjects',
+      name: 'allProjects',
+      component: AllProjectsView
     },
     {
       path: '/project/:id',

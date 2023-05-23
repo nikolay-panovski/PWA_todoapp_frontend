@@ -28,7 +28,12 @@
         <button type="button" class="bg-gray-400 rounded-md
                                 relative mx-2 my-auto p-3
                                 text-lg font-normal text-white">
-          Dashboard
+          <RouterLink to="/allProjects">Projects</RouterLink>
+        </button>
+        <button type="button" class="bg-gray-400 rounded-md
+                                relative mx-2 my-auto p-3
+                                text-lg font-normal text-white">
+          <RouterLink to="/dashboard">Dashboard</RouterLink>
         </button>
     </div>
 </template>
