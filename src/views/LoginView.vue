@@ -1,6 +1,11 @@
 <template>
-    <!-- alright, the following (first time Tailwind) is indeed ugly -->
-    <!-- next up: inventing intermediate class templates (for example a "primarybutton" template) to apply in fewer words? -->
+    
+    <p class="text-md font-semibold mx-auto my-3">
+        User accounts to enter: test@example.org 12345678 (Manager); employeeFE@example.org 88888888 (Employee)
+        <br/>
+        This makes for a very "secure" app, but registration is disabled on purpose.
+    </p>
+
     <div class="flex flex-col items-center">
         <div class="relative w-1/2 mx-auto my-1">
             <label for="inputEmail"

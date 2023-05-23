@@ -1,5 +1,12 @@
 <template>
     <div class="flex flex-col">
+
+        <p class="text-lg font-semibold mx-auto my-3">
+           WARNING! This page is mock only, users will not actually be registered!
+            <br/>
+           On pressing "Register", a "Confirmation of inputs" will be appended to the bottom of the app.
+        </p>
+
         <div class="relative w-1/2 mx-auto my-1">
             <label for="inputFirstName"
                 class="block">First name:</label>
