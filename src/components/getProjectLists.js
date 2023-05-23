@@ -19,8 +19,23 @@ const getProjectListsFunctions = () => {
             .catch( (error) => console.log(error) );
     }
 
+    async function getSpecificProjectWithTasks(projectId) {
+        return fetch(backendBaseURL + "/api/project/tasks/" + projectId,
+            {
+                method: "GET",
+                headers: { 
+                    "Accept": "application/json"
+                },    
+                mode: 'cors'
+            } )
+            .then ( (responseObject) => responseObject.json())
+            .then ( (responseJson) => { return responseJson; } )
+            .catch( (error) => console.log(error) );
+    }
+
     return {
-        getAllCompanyProjects
+        getAllCompanyProjects,
+        getSpecificProjectWithTasks
     } ;
 };
 

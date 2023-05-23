@@ -4,6 +4,8 @@ import RegisterViewMock from "../views/RegisterViewMock.vue"
 import LoginView from "../views/LoginView.vue"
 
 import DashboardView from "../views/HomeDashboardView.vue"
+import AllProjectsView from "../views/AllProjectsView.vue"
+import SpecificProjectView from "../views/SpecificProjectView.vue"
 
 import CreateNewProjectView from "../views/operations/CreateNewProjectView.vue"
 import CreateNewTaskView from "../views/operations/CreateNewTaskView.vue"
@@ -48,6 +50,11 @@ const router = createRouter({
       path: '/test/editTask',
       name: 'editTask',
       component: EditTaskView
+    },
+    {
+      path: '/project/:id',
+      name: 'project',
+      component: SpecificProjectView
     },
   ]
 });

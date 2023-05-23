@@ -48,6 +48,8 @@
 </template>
 
 <script setup>
+    import router from "../../router/index.js";
+
     import { ref } from "vue";
     import createNewProjectFunctions from "@/components/createNewProject.js";
 
@@ -80,7 +82,8 @@
         else {
             lastCreateFailed.value = false;
 
-            // router.push( { path: view of "all projects" page ? concrete project page } );
+            let projectId = createResult._id;   // BE must expose the _id in the response body
+            router.push( { name: "project", params: { id: projectId } } );
         }
     }
 </script>
