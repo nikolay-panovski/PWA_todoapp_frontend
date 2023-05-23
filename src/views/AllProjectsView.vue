@@ -14,7 +14,10 @@
                         <td> {{ project.name }}</td>
                         <td> {{ project.company_client }}</td>
                         <td> {{ project.deadline }} </td>
-                        <!-- idk, maybe a button to go to project (RouterLink to=project._id) -->
+                        <button type="button" @click="goToProjectPage(project._id)"
+                            class="bg-green-300 rounded-lg
+                                relative py-2 left-0 right-0
+                                text-lg font-semibold text-white">Go</button>
                     </tr>
                 </table>
                 
@@ -31,6 +34,7 @@
 </template>
 
 <script setup>
+    import router from "../router/index.js";
     import { ref, computed, onMounted } from "vue";
 
     import { useCurrentUserStore } from "../components/currentUserStore.js";
@@ -47,6 +51,10 @@
         projects.value = await getAllCompanyProjects();
 
 
+    }
+
+    function goToProjectPage(projectId) {
+        router.push( { name: "project", params: { id: projectId } } );
     }
 
     onMounted(loadProjects);
