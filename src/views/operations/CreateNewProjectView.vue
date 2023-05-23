@@ -1,5 +1,4 @@
 <template>
-    <!-- TODO: header here -->
     <div class="flex flex-col w-1/2 m-auto">
         <h1 class="leading-loose text-2xl">New Project</h1>
 
@@ -29,8 +28,6 @@
 
         <label for="inputTimeDeadline"
             class="">Deadline</label>
-            <!-- TODO?: v-bind: value to default to now? -->
-            <!-- TODO: v-bind: min and max to visually create acceptable range for Deadline (from current time to project deadline) -->
         <input type="date" id="inputTimeDeadline" min="" max="" v-model="deadline" required
             class="rounded-sm m-1 p-1 text-black">
 
