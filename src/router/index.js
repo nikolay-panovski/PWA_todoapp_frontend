@@ -37,17 +37,17 @@ const router = createRouter({
       component: LoginView
     },
     {
-      path: '/test/newProject',
+      path: '/newProject',
       name: 'createNewProject',
       component: CreateNewProjectView
     },
     {
-      path: '/test/newTask',
+      path: '/newTask',
       name: 'createNewTask',
       component: CreateNewTaskView
     },
     {
-      path: '/test/editTask',
+      path: '/editTask/:id',
       name: 'editTask',
       component: EditTaskView
     },{

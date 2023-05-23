@@ -17,13 +17,13 @@
         <button type="button" class="bg-gray-400 rounded-md
                                 relative mx-2 my-auto p-3
                                 text-lg font-normal text-white">
-          <RouterLink to="/test/newTask">New Task</RouterLink>
+          <RouterLink to="/newTask">New Task</RouterLink>
         </button>
         <button v-if="role === 'Manager'"
                 type="button" class="bg-gray-400 rounded-md
                                 relative mx-2 my-auto p-3
                                 text-lg font-normal text-white">
-          <RouterLink to="/test/newProject">New Project</RouterLink>
+          <RouterLink to="/newProject">New Project</RouterLink>
         </button>
         <button type="button" class="bg-gray-400 rounded-md
                                 relative mx-2 my-auto p-3
