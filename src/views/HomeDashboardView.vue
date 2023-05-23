@@ -20,10 +20,16 @@
                         <td class="p-3"> {{ task.project }} </td>    <!-- uh oh, ObjectId -->
                         <td class="p-3"> {{ task.time_estimated }} </td>
                         <td class="p-3"> {{ task.time_registered }} </td>
-                        <button type="button" @click="goToProjectPage(task.project)"
+                        <td class="p-3">
+                            <button type="button" @click="goToProjectPage(task.project)"
                             class="bg-green-300 rounded-lg
-                                relative p-2 left-0 right-0
+                                relative left-0 right-0
                                 text-lg font-semibold text-white">Go</button>
+                            <button type="button" @click="goToEditPage(task._id)"
+                            class="bg-orange-300 rounded-lg
+                                relative left-0 right-0
+                                text-lg font-semibold text-white">Edit</button>
+                        </td>
                     </tr>
                 </table>
                 
@@ -45,7 +51,12 @@
                         <td class="p-3"></td>
                         <td class="p-3"> {{ task.time_estimated }} </td>
                         <td class="p-3"> {{ task.time_registered }} </td>
-                        <!-- a -->
+                        <td class="p-3">
+                            <button type="button" @click="goToEditPage(task._id)"
+                            class="bg-orange-300 rounded-lg
+                                relative left-0 right-0
+                                text-lg font-semibold text-white">Edit</button>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -82,6 +93,10 @@
 
     function goToProjectPage(projectId) {
         router.push( { name: "project", params: { id: projectId } } );
+    }
+
+    function goToEditPage(taskId) {
+        router.push( { name: "editTask", params: { id: taskId } } );
     }
 
     onMounted(loadDashboardTasks);
